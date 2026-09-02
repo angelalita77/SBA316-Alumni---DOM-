@@ -5,4 +5,12 @@ const todoList = document.querySelector('#todo-list') //☑️ querySelector
 const errorMessage = document.querySelector('#error-message');
 const todoCount = document.getElementById('todo-count');
 
+const testText = "Task"
 
+// Helper Function - Create Todo Item
+function createTodoItem(text){
+    const li = document.createElement('li')
+    console.log(li)
+}
+
+createTodoItem(testText)
