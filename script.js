@@ -4,16 +4,14 @@ const todoInput = document.getElementById('todo-input');
 const todoList = document.querySelector('#todo-list') //☑️ querySelector
 const errorMessage = document.querySelector('#error-message');
 const todoCount = document.getElementById('todo-count');
+const ulEl = document.getElementById("ul");
 
-const testText = "Task Entered"
 
 // Helper Function - Create Todo Item
 // Output: <li> 
 //             <span>text</span> <button class="delete-btn">DELETE</button> 
 //         </li>
-function createTodoItem(text){
-
-    // Create <li> element
+function createTodoItem(text) {
     const li = document.createElement('li'); //☑️ createElement
     console.log(li);
 
@@ -28,9 +26,12 @@ function createTodoItem(text){
     deleteBtn.className = "delete-btn";
     console.log(deleteBtn);
 
-    
+    // deleteBtn.addEventListener('click', function () {
+    //     li.parentNode.removeChild();                    // ☑️  parent-child navigation (parentNode)
+    // });
+
     li.appendChild(span);
     li.appendChild(deleteBtn);
-}
 
-createTodoItem(testText);
+    return li;
+}
