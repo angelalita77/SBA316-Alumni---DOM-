@@ -36,4 +36,28 @@ function createTodoItem(text) {
     return li;
 }
 
+todoForm.addEventListener('submit', function(event) {
+    event.preventDefault;
+
+    const value = todoInput.value.trim(); // strip the whitespace from the text typed
+    
+    // DOM-event-based validation
+    // If the word is less than two characters, toggle error message
+    if(value.length < 2) {
+        errorMessage.classList.remove('hidden'); //☑️ classList modification on interaction
+        todoInput.setAttribute('aria-invalid', 'true'); //☑️ attribute modification on interation
+        return;
+    }
+
+    errorMessage.classList.add('hidden');
+    todoInput.removeAttribute('aria-invalid');
+
+    // Use helper function to create a todo item
+    // and then append item to the list
+    const newItem = createTodoItem(value);
+    todoList.appendChild(newItem);
+
+    todoInput.value = '';
+
+})
 
